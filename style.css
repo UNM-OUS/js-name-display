@@ -54,12 +54,12 @@ body {
   right: 0;
   bottom: 0;
   z-index: 1;
-  font-size: 125%;
+  font-size: 110%;
 }
 
 #name-list .name {
   padding-left: 2em;
-  padding-bottom: 0.5em;
+  padding-bottom: 0.1em;
   padding-top: 0.5em;
   text-indent: -2em;
   transition: all 0.75s ease-in-out;

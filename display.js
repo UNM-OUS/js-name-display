@@ -1,9 +1,18 @@
-const disp = document.getElementById('name-list');
+const display_element = document.getElementById('name-list');
 const queue = [];
-const displayed = [];
+const display_elements = [];
+const display_names = [];
 
-setInterval(popQueue, 1000);
-function popQueue() {
+setInterval(display_next, 1000);
+
+function queue_name(name) {
+  if (queue.includes(name)) return;
+  if (display_names.includes(name)) return;
+  queue.push(name);
+  display_names.unshift(name);
+}
+
+function display_next() {
   const name = queue.shift();
   if (name === undefined) return;
   const el = document.createElement('div');
@@ -11,16 +20,18 @@ function popQueue() {
   el.innerHTML = name;
   el.style.top = '-10em';
   el.style.opacity = 0;
-  disp.append(el);
+  display_element.append(el);
+
   // run animation
   setTimeout(() => {
-    displayed.unshift(el);
+    display_elements.unshift(el);
     var totalHeight = 0;
-    displayed.forEach((el) => {
+    display_elements.forEach((el) => {
       // delete if finished
-      if (totalHeight > disp.offsetHeight * 1.5) {
-        displayed.pop();
-        disp.removeChild(el);
+      if (totalHeight > display_element.offsetHeight * 1.5) {
+        display_names.pop();
+        display_elements.pop();
+        display_element.removeChild(el);
       }
       // otherwise animate
       el.style.opacity = 1;
