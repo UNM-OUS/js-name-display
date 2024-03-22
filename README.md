@@ -11,6 +11,7 @@ The computer this runs on should have the following settings adjusted. Ideally t
 * Prevent sleeping: ensure that it will not automatically turn off the screen or go to sleep
 * Set scaling to 100%: the scaling should be set to 100% so that at 1080p the browser renders 1:1 pixels
 * Open index.html in any old browser and ensure display is fullscreen
+  * Tip: In Kiosk mode you can force 100% scaling in kiosk mode by prepending the Edge URL field with `/Force-Device-Factor=1.00`, i.e. `/Force-Device-Factor=1.00 file:///C:/js-name-display/index.html`
 
 ## Using the system
 
