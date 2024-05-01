@@ -3,9 +3,15 @@ const scanner_input = document.getElementById('scanner-input');
 
 scanner_form.addEventListener('submit', (e) => {
   if (scanner_input.value) {
-    queue_name(scanner_input.value);
+    // grab name and do housekeeping
+    var name = scanner_input.value;
     scanner_input.value = '';
     scanner_input.focus();
     e.preventDefault();
+    // process and queue name
+    name = decodeURI(name);
+    name = name.replaceAll('+', ' ');
+    name = name.replaceAll(/(<([^>]+)>)/gi, "")
+    queue_name(name);
   }
 });

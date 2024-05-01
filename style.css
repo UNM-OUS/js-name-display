@@ -59,6 +59,7 @@ body {
 
 #name-list .name {
   padding-left: 2em;
+  padding-right: 0.5em;
   padding-bottom: 0.1em;
   padding-top: 0.5em;
   text-indent: -2em;
