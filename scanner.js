@@ -9,7 +9,8 @@ scanner_form.addEventListener('submit', (e) => {
     scanner_input.focus();
     e.preventDefault();
     // process and queue name
-    name = decodeURI(name);
+    name = decodeURIComponent(name);
+    console.log(name);
     name = name.replaceAll('+', ' ');
     name = name.replaceAll(/(<([^>]+)>)/gi, "")
     queue_name(name);
